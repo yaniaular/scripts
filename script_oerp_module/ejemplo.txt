@@ -1,0 +1,1 @@
+oerpmodule create purchase_requisition_workflow -d "Yanina Aular <yani@vauxoo.com>" -p "Humberto Arocha <hbto@vauxoo.com>" -t "Humberto Arocha <hbto@vauxoo.com>"

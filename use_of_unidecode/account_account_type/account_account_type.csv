@@ -1,0 +1,3 @@
+id,model,name,code,close_method,report_type,note
+str,str,str,str,str,str,str
+aat_estructura,account.account.type,ESTRUCTURA DE CUENTAS,ESTRUCTURA,none,none,

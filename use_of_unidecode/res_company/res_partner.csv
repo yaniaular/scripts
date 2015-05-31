@@ -1,0 +1,3 @@
+id,model,name,street,street2,city,zip,country_id,state_id,vat,phone,fax,website,email,image,notification_email_send
+str,str,str,str,str,str,str,search,ref,str,str,str,str,str,bin,str
+base.main_partner,"res.partner","EDIFICACIONES E INVERSIONES MARCACCIO, C.A","Urb. Santa Isabel, Carretera Nacional","C/C San Isidro, Quinta Lumareli",Boconó,3103,VE,rcs_trujillo_state_edima,VEJ090137416,0272-6521112/1213,0272-6521975,www.edimaca.com,edimaca2003@gmail.com,edima.png,all

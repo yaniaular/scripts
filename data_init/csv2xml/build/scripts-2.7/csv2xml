@@ -1,0 +1,92 @@
+#!/usr/bin/python
+# PYTHON_ARGCOMPLETE_OK
+
+import csv2xml.csv2xml as csv2xml
+from urlparse import urljoin
+import os
+import argparse
+import argcomplete
+
+def argument_parser():
+    """
+    This function create the help command line and manage and filter the
+    parameters of this program (default values, choices values)
+    """
+    parser = argparse.ArgumentParser(
+        prog='csv2xml',
+        description='Update data xml from a module via csv files.',
+        epilog="""
+Openerp Developer Comunity Tool
+Development by Vauxoo Team (lp:~vauxoo)
+Coded by Katherine Zaoral <kathy@vauxoo.com>.
+Source code at lp:~vauxoo-private/vauxoo-private/data_init-dev-kty.""",
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+
+    # create subparsers
+    subparsers = parser.add_subparsers(
+        dest='action',
+        help='subcommands help')
+    update_parser = subparsers.add_parser(
+        'update', help='Update a module data xml files.')
+    create_parser = subparsers.add_parser(
+        'create', help='Create csv files templates.')
+
+    update_parser.add_argument(
+        'module_name',
+        metavar='MODULE_NAME',
+        type=str,
+        help='name of the module to be update.')
+    update_parser.add_argument(
+        'csv_dir',
+        metavar='CSV_DIR', 
+        type=str,
+        help='the folder where your csv and config files are.')
+    create_parser.add_argument(
+        'csv_dir',
+        metavar='CSV_DIR', 
+        type=str,
+        help='where to put the csv templates folder.')
+
+    argcomplete.autocomplete(parser)
+    return parser.parse_args()
+
+def confirm_run(args):
+    """
+    Manual confirmation before runing the script. Very usefull.
+    """
+    print'\n... Configuration of Parameters Set'
+    for (parameter, value) in args.__dict__.iteritems():
+        print '%s = %s' % (parameter, value)
+
+    confirm_flag = False
+    while confirm_flag not in ['y', 'n']:
+        confirm_flag = raw_input(
+            'Confirm the run with the above parameters? [y/n]: ')
+        if confirm_flag == 'y':
+            print 'The script parameters were confirmed by the user'
+        elif confirm_flag == 'n':
+            print 'The user cancel the operation'
+            exit()
+        else:
+            print 'The entry is not valid, please enter y or n.'
+    return True
+
+def fix_args(args):
+    full_path = os.getcwd() + '/'
+    if args.action == 'update':
+        args.module_name = args.module_name.replace('/', '')
+        args.module_full_path = urljoin(full_path, args.module_name)
+    args.csv_dir_full_path = urljoin(full_path, args.csv_dir)
+    return args
+
+def main():
+    args = argument_parser()
+    fix_args(args)
+    confirm_run(args)
+    if args.action == 'create':
+        csv2xml.create_csv_template(args)
+    elif args.action == 'update':
+        csv2xml.update_xml(args)
+
+if __name__ == '__main__':
+    main()

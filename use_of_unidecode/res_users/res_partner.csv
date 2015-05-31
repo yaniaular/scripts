@@ -1,0 +1,3 @@
+id,model,name,street,street2,city,zip,country_id,state_id,vat,phone,fax,website,email,image
+str,str,str,str,str,str,str,search,ref,str,str,str,str,str,bin
+partner_001,res.partner,01_NAME,01_street,01_street2,01_city,01_zip,VE,,J657889453,+585437865429,,www.prueba.com,temporal@correo.com,

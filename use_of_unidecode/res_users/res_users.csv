@@ -1,0 +1,3 @@
+id,model,partner_id,login,password,company_id,groups_id,company_ids,menu_id,lang
+str,str,ref,str,str,ref,eval,m2m,eval,str
+user_001,res.users,partner_001,login_001,,base.main_company,,,,en_US

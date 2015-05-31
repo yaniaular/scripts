@@ -1,0 +1,3 @@
+id,model,code,country_id,name
+str,str,str,search,str
+rcs_trujillo_state_edima,"res.country.state",TRU,VE,Trujillo

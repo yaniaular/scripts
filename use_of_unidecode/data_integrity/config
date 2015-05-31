@@ -1,0 +1,16 @@
+../res_currency/res_currency.csv
+../res_currency/res_currency_rate.csv
+../account_journal/account_journal.csv
+../account_account/account_account.csv
+../account_fiscalyear/account_fiscalyear.csv
+../account_fiscalyear/account_period.csv
+../stock_warehouse/stock_warehouse.csv
+../account_account_type/account_account_type.csv
+../res_bank/res_bank.csv
+../islr_wh_concept/islr_wh_concept.csv
+../account_tax/account_tax.csv
+../sale_shop/sale_shop.csv
+../res_company/res_partner.csv
+../res_company/res_country_state.csv
+../res_company/res_company.csv
+../stock_location/stock_location.csv

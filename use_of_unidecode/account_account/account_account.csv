@@ -1,0 +1,3 @@
+id,model,code,name,parent_id,type,user_type,reconcile
+str,str,str,str,search,str,ref,str
+aa_coa_000,account.account,0,EDIMA,,view,aat_estructura,0

@@ -1,0 +1,6 @@
+#!/usr/bin/python
+# PYTHON_ARGCOMPLETE_OK
+import oerp_module
+
+if __name__ == '__main__':
+    oerp_module.main()
